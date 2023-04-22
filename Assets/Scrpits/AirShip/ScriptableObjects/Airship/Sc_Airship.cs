@@ -14,6 +14,8 @@ public class Sc_Airship : ScriptableObject
     [SerializeField] private int m_armor;
     [SerializeField] private int m_health;
     [SerializeField] private int m_actionPoints;
+    [SerializeField] private int m_hitChance;
+
     [SerializeField] private List<WeaponTypes> m_weaponTypes;
 
 
@@ -47,7 +49,10 @@ public class Sc_Airship : ScriptableObject
     {
         get { return m_actionPoints; }
     }
-
+    public int HitChance
+    {
+        get { return m_hitChance; }
+    }
     public List<WeaponTypes> WeaponTypes
     {
         get { return m_weaponTypes; }

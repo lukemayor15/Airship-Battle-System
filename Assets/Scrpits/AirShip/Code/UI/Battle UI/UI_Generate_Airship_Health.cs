@@ -19,7 +19,7 @@ public class UI_Generate_Airship_Health : MonoBehaviour
         
     }
 
-    public void GenerateAirshipHealth(Stats airship_Stats)
+    public void GenerateAirshipHealth(AirShip_Stats airship_Stats)
     {
         GameObject newbutton = Instantiate(m_prefabHealth);
         newbutton.gameObject.transform.SetParent(m_healthPanel.gameObject.transform);

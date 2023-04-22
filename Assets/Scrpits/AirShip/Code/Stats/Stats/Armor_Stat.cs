@@ -6,7 +6,7 @@ public class Armor_Stat : Base_Stat
 {
     [SerializeField] private int m_armor;
 
-    Armor_Stat(int armor)
+    public Armor_Stat(int armor)
     {
         m_armor = armor;
     }

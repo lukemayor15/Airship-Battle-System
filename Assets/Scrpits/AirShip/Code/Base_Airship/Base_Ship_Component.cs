@@ -5,64 +5,29 @@ using UnityEngine;
 public class Base_Ship_Component : MonoBehaviour
 {
     [SerializeField] protected Sc_Base_Ship_Component m_sc_Base_Ship_Component;
-    [SerializeField] protected Stats stats =  new Stats();
-    [SerializeField] protected  string m_name;
-    [SerializeField] protected  int m_health;
-    [SerializeField] protected  int m_armor;
-    [SerializeField] protected  int m_hitChance;
-    [SerializeField] protected  bool m_destroyed = false;
-    [SerializeField] protected  bool m_targetable = true;
+    [SerializeField] public Base_Stats m_baseStats;
+ 
 
     //==========properties============
-    public string Name
-    {
-        get { return m_name; }
-    }
-    public int Health
-    {
-        get { return m_health; }
-    }
-    public int Armor
-    {
-        get { return m_armor; }
-    }
-    public int HitChance
-    {
-        get { return m_hitChance; }
-    }
-
-    public bool Destroyed
-    {
-        get { return m_destroyed; }
-    }
-
-    public bool Targetable
-    {
-        get { return m_targetable; }
-    }
+   
 
 
     // Start is called before the first frame update
     public void Start()
     {
-        Setup();
+        Init();
     }
-
-    //This use the Sc_Base_Ship_Component scritpable object to set up the values for the Base_Ship_Component
-    protected virtual void Setup()
+    //Init the compoment with the scritable object that contains it stats
+    //This creates the base stats from the scritable object, if there is need for additonal stats,
+    //create a new class for the compoment stats and add the3se into the compoment class, for an example look at the Hull class
+    protected virtual void Init()
     {
-        //Create a list of the stats
-        //Add each stat to stats
-        stats.Add(new Base_Stat())
-
-        //m_name = m_sc_Base_Ship_Component.Name;
-        //m_health = m_sc_Base_Ship_Component.Health;
-        //m_armor = m_sc_Base_Ship_Component.Armor;
-        //m_hitChance = m_sc_Base_Ship_Component.HitChance;
-        //m_destroyed = m_sc_Base_Ship_Component.Destroyed;
-        //m_targetable = m_sc_Base_Ship_Component.Targetable;
+        //Create the base stats for each compoment
+        m_baseStats = new Base_Stats(m_sc_Base_Ship_Component.Name, m_sc_Base_Ship_Component.Health, m_sc_Base_Ship_Component.Armor, m_sc_Base_Ship_Component.HitChance,
+        m_sc_Base_Ship_Component.Destroyed, m_sc_Base_Ship_Component.Targetable);
 
     }
+    //Consider making into an interface, as other elements may need to get damaged
     //THis will Apply the damage a ship/Compoment Take
     protected void TakeDamage()
     {

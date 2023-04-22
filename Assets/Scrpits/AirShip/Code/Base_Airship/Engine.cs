@@ -6,8 +6,8 @@ public class Engine : Base_Ship_Component
 {
 
     [SerializeField] private Sc_Engine m_sc_Engine;
-    [SerializeField] private int m_speed;
-    [SerializeField] private int m_manoeuvring;
+    Engine_Stats m_EningeStats;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +23,10 @@ public class Engine : Base_Ship_Component
     }
 
     //Setups the base values of the Engine from the scriptable object and call base setup
-    protected override void Setup()
+    protected override void Init()
     {
         m_sc_Base_Ship_Component = m_sc_Engine;
-        m_speed = m_sc_Engine.Speed;
-        m_manoeuvring = m_sc_Engine.Manoeuvring;
-        base.Setup();
+        m_EningeStats = new Engine_Stats(m_sc_Engine.Speed, m_sc_Engine.Manoeuvring);
+        base.Init();
     }
 }

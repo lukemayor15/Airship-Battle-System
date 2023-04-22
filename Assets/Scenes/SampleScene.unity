@@ -569,14 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_sc_Base_Ship_Component: {fileID: 0}
-  m_name: 
-  m_health: 0
-  m_armor: 0
-  m_hitChance: 0
-  m_destroyed: 0
-  m_targetable: 1
   sc_SideThrusters: {fileID: 11400000, guid: 81995a1ca7603704cb34fb52acfba0bd, type: 2}
-  m_manoeuvring: 0
 --- !u!114 &1426608000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -590,15 +583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_sc_Base_Ship_Component: {fileID: 0}
-  m_name: 
-  m_health: 0
-  m_armor: 0
-  m_hitChance: 0
-  m_destroyed: 0
-  m_targetable: 1
   m_sc_Hull: {fileID: 11400000, guid: d1a35945e5aeb154f82f5cbc8669088f, type: 2}
-  m_manoeuvring: 0
-  m_speed: 0
 --- !u!114 &1426608001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,14 +618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_sc_Base_Ship_Component: {fileID: 0}
-  m_name: 
-  m_health: 0
-  m_armor: 0
-  m_hitChance: 0
-  m_destroyed: 0
-  m_targetable: 1
   m_sc_Bridge: {fileID: 11400000, guid: 89460a03d8b10e04c95030b9dd4c6b06, type: 2}
-  m_actionPoints: 0
 --- !u!114 &1426608003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -654,12 +632,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_sc_Base_Ship_Component: {fileID: 0}
-  m_name: 
-  m_health: 0
-  m_armor: 0
-  m_hitChance: 0
-  m_destroyed: 0
-  m_targetable: 1
   m_sc_Deck: {fileID: 11400000, guid: e2377dc1a2c89474e9b90a09c27650ae, type: 2}
 --- !u!114 &1426608004
 MonoBehaviour:
@@ -674,15 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_sc_Base_Ship_Component: {fileID: 0}
-  m_name: 
-  m_health: 0
-  m_armor: 0
-  m_hitChance: 0
-  m_destroyed: 0
-  m_targetable: 1
   m_sc_Engine: {fileID: 11400000, guid: 114577bebda6a7a46b9c16dd4e3faddf, type: 2}
-  m_speed: 0
-  m_manoeuvring: 0
 --- !u!114 &1426608005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -696,14 +660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_sc_Base_Ship_Component: {fileID: 0}
-  m_name: 
-  m_health: 0
-  m_armor: 0
-  m_hitChance: 0
-  m_destroyed: 0
-  m_targetable: 1
   sc_SideThrusters: {fileID: 11400000, guid: 81995a1ca7603704cb34fb52acfba0bd, type: 2}
-  m_manoeuvring: 0
 --- !u!1 &1604430270
 GameObject:
   m_ObjectHideFlags: 0

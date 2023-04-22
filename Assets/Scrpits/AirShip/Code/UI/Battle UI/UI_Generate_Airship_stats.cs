@@ -20,7 +20,7 @@ public class UI_Generate_Airship_stats : MonoBehaviour
         
     }
     
-    public void GenerateAirshipStats(Stats airshipStats)
+    public void GenerateAirshipStats(AirShip_Stats airshipStats)
     {
         GameObject newStat = Instantiate(m_prefabAirshipStat);
         newStat.gameObject.transform.SetParent(m_AirshipStats.gameObject.transform);

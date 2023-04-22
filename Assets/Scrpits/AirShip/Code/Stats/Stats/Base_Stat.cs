@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public  class Base_Stat
+public abstract class Base_Stat
 {
     [SerializeField] private string m_name;
     [SerializeField] protected string m_description;

@@ -21,7 +21,7 @@ public class UIGenerateAirshipWeapons
 public class UIGenerateAirshipStats
 {
 
-    public delegate void OnUIGenerateAirshipStats(Stats airshipStats);
+    public delegate void OnUIGenerateAirshipStats(AirShip_Stats airshipStats);
     public static OnUIGenerateAirshipStats onUIGenerateAirshipStats;
 
 }

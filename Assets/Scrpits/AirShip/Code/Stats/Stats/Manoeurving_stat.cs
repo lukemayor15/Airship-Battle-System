@@ -6,7 +6,7 @@ public class Manoeurving_stat : Base_Stat
 {
     [SerializeField] private int m_manoeurving;
 
-    Manoeurving_stat(int manoeurving)
+    public Manoeurving_stat(int manoeurving)
     {
         m_manoeurving = manoeurving;
     }

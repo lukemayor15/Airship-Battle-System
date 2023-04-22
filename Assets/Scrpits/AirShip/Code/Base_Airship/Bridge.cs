@@ -6,8 +6,7 @@ public class Bridge : Base_Ship_Component
 {
 
     [SerializeField] private Sc_Bridge m_sc_Bridge;
-    [SerializeField] private int m_actionPoints;
-
+    Bridge_Stats m_bridgeStats;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,11 +20,11 @@ public class Bridge : Base_Ship_Component
     }
 
     //Setups the base values of the Bridge from the scriptable object and call base setup
-    protected override void Setup()
+    protected override void Init()
     {
 
         m_sc_Base_Ship_Component = m_sc_Bridge;
-        m_actionPoints = m_sc_Bridge.ActionPoints;
-        base.Setup();
+        m_bridgeStats = new Bridge_Stats(m_sc_Bridge.ActionPoints);
+        base.Init();
     }
 }

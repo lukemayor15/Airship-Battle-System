@@ -51,18 +51,18 @@ public class Weapon_Base : Base_Ship_Component
         m_damageType.DoDamage(m_damage);
     }
 
-    protected override void Setup()
+    protected override void Init()
     {
         this.m_sc_Base_Ship_Component = m_sc_WeaponType;
         this.m_range = m_sc_WeaponType.Range;
         this.m_damage = m_sc_WeaponType.Damage;
-        base.Setup();
+        base.Init();
     }
 
     public void Init(Sc_WeaponTypes sc_WeaponType)
     {
         m_sc_WeaponType = sc_WeaponType;
-        Setup();
+        Init();
     }
 
 

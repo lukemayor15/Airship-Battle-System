@@ -6,8 +6,8 @@ public class Hull : Base_Ship_Component
 {
     [SerializeField] private Sc_Hull m_sc_Hull;
     // Start is called before the first frame update
-    [SerializeField] private int m_manoeuvring;
-    [SerializeField] private int m_speed;
+    Hull_Stats Hull_Stats;
+ 
 
     void Start()
     {
@@ -21,13 +21,11 @@ public class Hull : Base_Ship_Component
     }
 
     //Setups the base values of the Hull from the scriptable object and call base setup
-    protected override void Setup()
+    protected override void Init()
     {
         m_sc_Base_Ship_Component = m_sc_Hull;
-        m_speed = m_sc_Hull.Speed;
-        m_manoeuvring = m_sc_Hull.Manoeuvring;
-        base.Setup();
-
+        Hull_Stats = new Hull_Stats(m_sc_Hull.Manoeuvring, m_sc_Hull.Speed);
+        base.Init();
 
     }
 }
