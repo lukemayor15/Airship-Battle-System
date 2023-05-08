@@ -1,0 +1,34 @@
+{
+    "name": "Input_Battle_Controls",
+    "maps": [
+        {
+            "name": "Battle_Controls",
+            "id": "166d935c-0d23-4dec-be53-8a43cb8c0785",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "a0e78c6e-94de-49bc-8a07-f8aff5169af4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b06f016c-0014-483e-aad6-add6f35c4248",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

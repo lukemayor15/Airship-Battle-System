@@ -48,6 +48,7 @@ public class Weapon_Base : Base_Ship_Component
 
     public void TryDoAttack()
     {
+        Debug.Log(m_sc_WeaponType);
         m_damageType.DoDamage(m_damage);
     }
 
