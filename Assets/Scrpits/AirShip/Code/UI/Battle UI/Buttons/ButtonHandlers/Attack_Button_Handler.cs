@@ -6,7 +6,6 @@ public class Attack_Button_Handler : MonoBehaviour
 {
     public void OnAttackButtonClicked()
     {
-        Delgate_EnableAttackPanel.onEnableAttackPanel.Invoke();
+        OnBattleWheelNextState_Delgate.onBattleWheelNextState?.Invoke();
     }
-
 }

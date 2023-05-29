@@ -3,15 +3,11 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class EnemySelectEnabled : MonoBehaviour
+public class EnemySelectEnabled : Battle_UI_Group
 {
-    public List<Button> m_enemyButtons;
     // Start is called before the first frame update
 
-    private void Awake()
-    {
-        ActionSelect.onActionSelected += Enable;
-    }
+  
     void Start()
     {
         
@@ -23,12 +19,19 @@ public class EnemySelectEnabled : MonoBehaviour
         
     }
 
-    private void Enable()
+    protected override void OnEnable()
     {
-        foreach (Button button in m_enemyButtons)
-        {
-            button.interactable = true;
-        }
+        BattleUiTargetStateEnter_Delgates.onBattleUITargetStateEnter += EnabledUI;
+        BattleUiTargetStateEnter_Delgates.onBattleUITargetStateEnter += EnableInteractable;
 
+        BattleUiTargetStateExit_Delgates.onBattleUITargetStateExit += DisableUI;
     }
+
+    protected override void OnDisable()
+    {
+        BattleUiTargetStateEnter_Delgates.onBattleUITargetStateEnter -= EnabledUI;
+        BattleUiTargetStateExit_Delgates.onBattleUITargetStateExit -= DisableUI;
+    }
+
+
 }

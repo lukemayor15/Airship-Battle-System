@@ -26,7 +26,7 @@ public class Airship : MonoBehaviour
         //Passed in the ship, FOr now use this to test for loading in the ui elements.
         //Update once have a scene/loading manager and then trigger these events in there instead, this is just done for testing purposes
         UIGenerateAirshipWeapons.onUIGenerateAirshipGenerateWeapons.Invoke(m_weaponTypesList);
-        UIGenerateAirshipStats.onUIGenerateAirshipStats.Invoke(m_airship_Stats);
+        UIGenerateAirshipStats.onUIGenerateAirshipStats?.Invoke(m_airship_Stats);
         
     }
 

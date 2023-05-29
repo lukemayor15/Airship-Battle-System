@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3096463018889658308}
   - component: {fileID: 423584718660036402}
   m_Layer: 5
-  m_Name: Attack_button
+  m_Name: Action_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,8 +124,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 423584718660036402}
-        m_TargetAssemblyTypeName: Weapon_Button_Handler, Assembly-CSharp
-        m_MethodName: OnWeaponButtonClicked
+        m_TargetAssemblyTypeName: ActionButtonHandler, Assembly-CSharp
+        m_MethodName: OnActionButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
