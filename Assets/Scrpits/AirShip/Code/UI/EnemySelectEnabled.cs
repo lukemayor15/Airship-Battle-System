@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class EnemySelectEnabled : Battle_UI_Group
+public class EnemySelectEnabled : BattleUIGroup
 {
     // Start is called before the first frame update
 
@@ -21,16 +21,16 @@ public class EnemySelectEnabled : Battle_UI_Group
 
     protected override void OnEnable()
     {
-        BattleUiTargetStateEnter_Delgates.onBattleUITargetStateEnter += EnabledUI;
-        BattleUiTargetStateEnter_Delgates.onBattleUITargetStateEnter += EnableInteractable;
+        BattleUITargetStateEnterDelgates.onBattleUITargetStateEnter += EnabledUI;
+        BattleUITargetStateEnterDelgates.onBattleUITargetStateEnter += EnableInteractable;
 
-        BattleUiTargetStateExit_Delgates.onBattleUITargetStateExit += DisableUI;
+        BattleUITargetStateExitDelgates.onBattleUITargetStateExit += DisableUI;
     }
 
     protected override void OnDisable()
     {
-        BattleUiTargetStateEnter_Delgates.onBattleUITargetStateEnter -= EnabledUI;
-        BattleUiTargetStateExit_Delgates.onBattleUITargetStateExit -= DisableUI;
+        BattleUITargetStateEnterDelgates.onBattleUITargetStateEnter -= EnabledUI;
+        BattleUITargetStateExitDelgates.onBattleUITargetStateExit -= DisableUI;
     }
 
 

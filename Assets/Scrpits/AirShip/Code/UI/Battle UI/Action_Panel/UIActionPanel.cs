@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class UIActionPanel : Battle_UI_Group
+public class UIActionPanel : BattleUIGroup
 {
 
     public Button m_prefabButton;
@@ -31,13 +31,13 @@ public class UIActionPanel : Battle_UI_Group
 
     protected override void OnEnable()
     {
-        BattleUIActionStateEnter_Delgate.onBattleUIActionStateEnter += EnabledUI;
-        BattleUIActionStateExit_Delgate.onBattleUIActionStatExit += DisableUI;
+        BattleUIActionStateEnterDelgate.onBattleUIActionStateEnter += EnabledUI;
+        BattleUIActionStateExitDelgate.onBattleUIActionStatExit += DisableUI;
     }
 
     protected override void OnDisable()
     {
-        Delgate_EnterdAttackPanelState.enterdAttackPanelState -= EnabledUI;
-        BattleUIActionStateExit_Delgate.onBattleUIActionStatExit -= DisableUI;
+        EnterdAttackPanelStateDelgate.enterdAttackPanelState -= EnabledUI;
+        BattleUIActionStateExitDelgate.onBattleUIActionStatExit -= DisableUI;
     }
 }

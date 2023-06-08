@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon_Base : Base_Ship_Component
+public class Weapon_Base : BaseShipComponent
 {
     private int m_damage = 0;
     [SerializeField] private int m_actionPointCost;
@@ -54,7 +54,7 @@ public class Weapon_Base : Base_Ship_Component
 
     protected override void Init()
     {
-        this.m_sc_Base_Ship_Component = m_sc_WeaponType;
+        this.m_scBaseShipComponent = m_sc_WeaponType;
         this.m_range = m_sc_WeaponType.Range;
         this.m_damage = m_sc_WeaponType.Damage;
         base.Init();

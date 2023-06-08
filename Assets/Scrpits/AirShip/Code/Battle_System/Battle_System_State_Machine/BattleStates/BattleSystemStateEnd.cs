@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputTRest : MonoBehaviour
+public class BattleSystemStateEnd : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,10 +13,6 @@ public class InputTRest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            BackButtonClicked.onBackButtonClicked?.Invoke();
-        }
-
+        
     }
 }

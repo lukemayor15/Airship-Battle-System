@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bridge : Base_Ship_Component
+public class Bridge : BaseShipComponent
 {
 
     [SerializeField] private Sc_Bridge m_sc_Bridge;
-    Bridge_Stats m_bridgeStats;
+    BridgeStats m_bridgeStats;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +23,8 @@ public class Bridge : Base_Ship_Component
     protected override void Init()
     {
 
-        m_sc_Base_Ship_Component = m_sc_Bridge;
-        m_bridgeStats = new Bridge_Stats(m_sc_Bridge.ActionPoints);
+        m_scBaseShipComponent = m_sc_Bridge;
+        m_bridgeStats = new BridgeStats(m_sc_Bridge.ActionPoints);
         base.Init();
     }
 }
