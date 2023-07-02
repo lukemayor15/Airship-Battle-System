@@ -32,7 +32,6 @@ public class BattleUIBattleWheelState : BattleUIState
     public override void Exit()
     {
         OnBattleWheelNextStateDelgate.onBattleWheelNextState -= NextState;
-
         OnBattleWheelStateExitDelgate.onBattleWheelStateExit?.Invoke();
     }
     public void NextState()

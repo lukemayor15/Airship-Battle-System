@@ -10,7 +10,7 @@ public class Sc_WeaponTypes : Sc_Base_Ship_Component
     [SerializeField] private int m_actionPointCost;
     [SerializeField] private int m_range;
     [SerializeField] private WeaponTypes m_weaponType;
-
+    [SerializeField] private Sprite m_sprite;
     //==========properties============
     public int Damage
     {
@@ -27,6 +27,11 @@ public class Sc_WeaponTypes : Sc_Base_Ship_Component
     public WeaponTypes WeaponType
     {
         get { return m_weaponType; }
+    }
+
+    public Sprite Sprite
+    {
+        get { return m_sprite; }
     }
 
 }

@@ -10,9 +10,9 @@ public class UIActionPanel : BattleUIGroup
 
     private void Start()
     {
-        UIGenerateAirshipWeapons.onUIGenerateAirshipGenerateWeapons += GenerateWeaponButtons;
 
     }
+    //Move out to a greante a seprate class 
     //Generate a list of weapons and try and do an attack,
     private void GenerateWeaponButtons(List<Weapon_Base> weapons)
     {
@@ -31,13 +31,15 @@ public class UIActionPanel : BattleUIGroup
 
     protected override void OnEnable()
     {
+        UIGenerateAirshipWeapons.onUIGenerateAirshipGenerateWeapons += GenerateWeaponButtons;
         BattleUIActionStateEnterDelgate.onBattleUIActionStateEnter += EnabledUI;
-        BattleUIActionStateExitDelgate.onBattleUIActionStatExit += DisableUI;
+        BattleUIActionStateExitDelgate.onBattleUIActionStateExit += DisableUI;
     }
 
     protected override void OnDisable()
     {
+        UIGenerateAirshipWeapons.onUIGenerateAirshipGenerateWeapons -= GenerateWeaponButtons;
         EnterdAttackPanelStateDelgate.enterdAttackPanelState -= EnabledUI;
-        BattleUIActionStateExitDelgate.onBattleUIActionStatExit -= DisableUI;
+        BattleUIActionStateExitDelgate.onBattleUIActionStateExit -= DisableUI;
     }
 }

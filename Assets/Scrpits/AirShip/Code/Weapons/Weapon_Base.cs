@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Weapon_Base : BaseShipComponent
 {
+    private int m_slotId = 0;
     private int m_damage = 0;
     [SerializeField] private int m_actionPointCost;
     [SerializeField] private int m_range;
@@ -15,6 +16,7 @@ public class Weapon_Base : BaseShipComponent
     public Sc_WeaponTypes WeaponTypes
     {
         set { m_sc_WeaponType = value; }
+        get { return m_sc_WeaponType; }
 
     }
     public IDoDamage DamageType
@@ -32,6 +34,11 @@ public class Weapon_Base : BaseShipComponent
     public int Range
     {
         get { return m_range; }
+    }
+
+    public int SlotId
+    {
+        get { return m_slotId; }
     }
 
     // Start is called before the first frame update
@@ -60,8 +67,9 @@ public class Weapon_Base : BaseShipComponent
         base.Init();
     }
 
-    public void Init(Sc_WeaponTypes sc_WeaponType)
+    public void Init(Sc_WeaponTypes sc_WeaponType , int Id)
     {
+        this.m_slotId = Id;
         m_sc_WeaponType = sc_WeaponType;
         Init();
     }

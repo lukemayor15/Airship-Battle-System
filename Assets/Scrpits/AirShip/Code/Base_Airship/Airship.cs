@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Airship : MonoBehaviour
@@ -15,32 +16,36 @@ public class Airship : MonoBehaviour
     [SerializeField] private List<Sc_WeaponTypes> m_Sc_weaponTypes;
     [SerializeField] private List<Weapon_Base> m_weaponTypesList = new List<Weapon_Base>();
     [SerializeField] private AirShipStats m_airship_Stats;
-
+    [SerializeField] private GenerateAirShipSprite m_generateAirShipSprite;
     public List<Weapon_Base> WeaponTypesList { get => m_weaponTypesList; set => m_weaponTypesList = value; }
+    public AirShipStats AirShipStats { get => m_airship_Stats; set => m_airship_Stats = value; }
 
+
+    [SerializeField] public Button test_button;
 
     // Start is called before the first frame update
     void Start()
     {
+        //Once the ship has been initalise communciate with the Ui Battle Manager to trigger the loading 
+        //of the Ui elements
         Init();
-        //Passed in the ship, FOr now use this to test for loading in the ui elements.
-        //Update once have a scene/loading manager and then trigger these events in there instead, this is just done for testing purposes
-        UIGenerateAirshipWeapons.onUIGenerateAirshipGenerateWeapons.Invoke(m_weaponTypesList);
-        UIGenerateAirshipStatsDelegate.onUIGenerateAirshipStats?.Invoke(m_airship_Stats);
-        
+        AirshipInitalisedDelgate.onAirshipInitalised?.Invoke(this);
+
     }
 
     private void Init()
     {
 
         m_airship_Stats = new AirShipStats(m_sc_AirShip.Manoeuvring, m_sc_AirShip.ActionPoints, m_sc_AirShip.Speed, m_sc_AirShip.Name, m_sc_AirShip.Health, m_sc_AirShip.Armor, m_sc_AirShip.HitChance);
-     
+
         ////loop through the weapones and create them
         //Create the default actions for all ships, rethink this to better store the value and cost;
         //create the weapon and a battle_actions
+
+        int IdCounter = 0;
         foreach (var weapon in m_Sc_weaponTypes)
         {
-            
+            IdCounter++;
             Weapon_Base createWeapon = null;
            switch(weapon.WeaponType)
            {
@@ -73,10 +78,12 @@ public class Airship : MonoBehaviour
                     break;
             }
 
-            createWeapon.Init(weapon);
+            createWeapon.Init(weapon, IdCounter);
             m_weaponTypesList.Add(createWeapon);
 
         }
+
+        m_generateAirShipSprite.SetSprites(this);
 
     }
 

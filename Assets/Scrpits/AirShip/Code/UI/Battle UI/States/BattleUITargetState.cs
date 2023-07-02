@@ -10,7 +10,6 @@ public class BattleUITargetState : BattleUIState
         //Trigger Battle_ButtonActionState
         BattleUITargetStateEnterDelgates.onBattleUITargetStateEnter?.Invoke();
         BackButtonClicked.onBackButtonClicked += FirstCLicked;
-        BattleUITargetStateExitDelgates.onBattleUITargetStateExit += Exit;
         BattleUITargetNextStateDelgates.onBattleUITargetNextState += NextState;
     }
 
@@ -33,13 +32,14 @@ public class BattleUITargetState : BattleUIState
     private void NextState()
     {
         Transition(new BattleUIBattleWheelState(m_stateMachine));
+        BattleUIActionStateExitDelgate.onBattleUIActionStateExit?.Invoke();
+
     }
 
     public override void Exit()
     {
         BackButtonClicked.onBackButtonClicked -= FirstCLicked;
-        BattleUIActionNextStateDelgate.onBattleUIActionNextState -= Exit;
         BattleUITargetNextStateDelgates.onBattleUITargetNextState -= NextState;
-        BattleUIActionStateExitDelgate.onBattleUIActionStatExit?.Invoke();
+        BattleUITargetStateExitDelgates.onBattleUITargetStateExit?.Invoke();
     }
 }

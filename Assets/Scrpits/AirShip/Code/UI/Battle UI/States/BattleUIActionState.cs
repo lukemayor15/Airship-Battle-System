@@ -27,6 +27,7 @@ public class BattleUIActionState : BattleUIState
 
     private void FirstCLicked()
     {
+        BattleUIActionStateExitDelgate.onBattleUIActionStateExit?.Invoke();
         Transition(new BattleUIBattleWheelState(m_stateMachine));
     }
 
@@ -34,7 +35,6 @@ public class BattleUIActionState : BattleUIState
     {
         BattleUIActionNextStateDelgate.onBattleUIActionNextState -= NextState;
         BackButtonClicked.onBackButtonClicked -= FirstCLicked;
-        BattleUIActionStateExitDelgate.onBattleUIActionStatExit?.Invoke();
        
     }
 

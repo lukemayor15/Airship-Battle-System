@@ -15,7 +15,7 @@ public class BattleUIActionStateExitDelgate
 {
 
     public delegate void OnBattleUIActionStatexit();
-    public static OnBattleUIActionStatexit onBattleUIActionStatExit;
+    public static OnBattleUIActionStatexit onBattleUIActionStateExit;
 
 }
 

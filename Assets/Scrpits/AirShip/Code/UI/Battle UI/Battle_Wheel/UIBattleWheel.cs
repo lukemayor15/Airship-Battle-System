@@ -12,13 +12,18 @@ public class UIBattleWheel : BattleUIGroup
     // Start is called before the first frame update
     void Start()
     {
-        float boundSize = m_battleWheel.GetComponent<Renderer>().localBounds.size.x;
+
+        //float boundSize = m_battleWheel.GetComponent<Renderer>().localBounds.size.x;
+        //m_battleWheel.GetComponent<CanvasScaler>().scaleFactor;
+        Image test = m_battleWheel.GetComponent<Image>();
+        float boundSize = m_battleWheel.GetComponent<Image>().sprite.bounds.size.x;
+        Debug.Log(test.sprite.border.magnitude);
         Debug.Log(boundSize);
         //Place them
-        buttons[0].gameObject.transform.position = UtilityWheelIconPlacement.CalulateVectorForMaxY(boundSize, m_battleWheel.transform);
-        buttons[1].gameObject.transform.position = UtilityWheelIconPlacement.CalulateVectorForMaxXMaxY(boundSize, m_battleWheel.transform);
-        buttons[2].gameObject.transform.position = UtilityWheelIconPlacement.CalulateVectorForMaxX(boundSize, m_battleWheel.transform);
-        buttons[3].gameObject.transform.position = UtilityWheelIconPlacement.CalulateVectorForMaxXMinY(boundSize, m_battleWheel.transform);
+        //buttons[0].gameObject.transform.position = UtilityWheelIconPlacement.CalulateVectorForMaxY(boundSize, test.canvasRenderer.transform);
+        //buttons[1].gameObject.transform.position = UtilityWheelIconPlacement.CalulateVectorForMaxXMaxY(boundSize, m_battleWheel.transform);
+        //buttons[2].gameObject.transform.position = UtilityWheelIconPlacement.CalulateVectorForMaxX(boundSize, m_battleWheel.transform);
+        //buttons[3].gameObject.transform.position = UtilityWheelIconPlacement.CalulateVectorForMaxXMinY(boundSize, m_battleWheel.transform);
 
     }
 
